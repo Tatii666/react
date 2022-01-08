@@ -1,17 +1,17 @@
 import React from "react";
 import s from './Profile.module.css';
 import MyPosts from "./MyPosts/MyPosts";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-const Profile = () => {
-    return <div>
+const Profile = (props) => {
+    return (
         <div>
-            <img src = 'https://cdn.pixabay.com/photo/2016/05/05/02/37/sunset-1373171__340.jpg' /> 
+        <ProfileInfo />
+        <MyPosts posts={props.profilePage.posts}
+                 newPostText = {props.profilePage.newPostText}
+                 dispatch={props.dispatch}/>
         </div>
-        <div>
-            ava + description 
-        </div> 
-       <MyPosts />
-    </div>
+    )
 }
 
 export default Profile;
